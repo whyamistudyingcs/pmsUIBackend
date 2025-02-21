@@ -19,13 +19,11 @@ import io.jsonwebtoken.security.Keys;
 public class JWTService {
 
     private final SecretKey sk;
-    private final String jwtSecret;
     private final long jwtExpiration;
 
     public JWTService(
             @Value("${JWT_SECRET}") String jwtSecret,
             @Value("${JWT_EXPIRATION}") long jwtExpiration) {
-        this.jwtSecret = jwtSecret;
         this.jwtExpiration = jwtExpiration;
         this.sk = Keys.hmacShaKeyFor(jwtSecret.getBytes());
     }

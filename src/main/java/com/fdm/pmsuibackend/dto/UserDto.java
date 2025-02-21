@@ -1,6 +1,9 @@
 package com.fdm.pmsuibackend.dto;
 
 import lombok.Data;
+
+import java.util.UUID;
+
 import org.springframework.stereotype.Component;
 
 /**
@@ -27,6 +30,6 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 public class UserDto {
+    private UUID userId;
     private String username;
-    private String password;
 }
