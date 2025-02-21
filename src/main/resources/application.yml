@@ -1,0 +1,18 @@
+server:
+  port: 8083
+
+#spring:
+#  datasource:
+#    druid:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      url: jdbc:mysql://localhost:3306/pmsdb
+#      username: root
+#      password: root
+
+
+#开启日志
+
+
+#mybatis-plus:
+# configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
