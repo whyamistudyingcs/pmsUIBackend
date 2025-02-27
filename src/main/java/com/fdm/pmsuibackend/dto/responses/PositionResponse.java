@@ -1,7 +1,9 @@
-package com.fdm.pmsuibackend.dto;
+package com.fdm.pmsuibackend.dto.responses;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;
+
+import com.fdm.pmsuibackend.dto.PositionDto;
 
 import java.util.List;
 import java.util.Map;

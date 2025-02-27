@@ -5,9 +5,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.fdm.pmsuibackend.dto.UserCreationRequestDto;
-import com.fdm.pmsuibackend.dto.UserDto;
 import com.fdm.pmsuibackend.dto.mapper.UserMapper;
+import com.fdm.pmsuibackend.dto.requests.UserCreationRequestDto;
+import com.fdm.pmsuibackend.dto.responses.UserDto;
 import com.fdm.pmsuibackend.model.User;
 import com.fdm.pmsuibackend.repositories.UserRepository;
 import com.fdm.pmsuibackend.service.security.JWTService;

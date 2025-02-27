@@ -4,8 +4,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import com.fdm.pmsuibackend.dto.UserCreationRequestDto;
-import com.fdm.pmsuibackend.dto.UserDto;
+import com.fdm.pmsuibackend.dto.requests.UserCreationRequestDto;
+import com.fdm.pmsuibackend.dto.responses.UserDto;
 import com.fdm.pmsuibackend.model.User;
 
 import lombok.RequiredArgsConstructor;

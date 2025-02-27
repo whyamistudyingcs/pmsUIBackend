@@ -1,4 +1,4 @@
-package com.fdm.pmsuibackend.dto;
+package com.fdm.pmsuibackend.dto.requests;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

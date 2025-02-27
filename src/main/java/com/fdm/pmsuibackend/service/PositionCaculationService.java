@@ -5,7 +5,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.fdm.pmsuibackend.dto.PositionResponse;
+import com.fdm.pmsuibackend.dto.responses.PositionResponse;
 
 import org.springframework.http.ResponseEntity;
 

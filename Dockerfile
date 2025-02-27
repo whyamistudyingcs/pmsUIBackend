@@ -1,12 +1,26 @@
-FROM eclipse-temurin:17-jre-jammy
+# Build stage
+FROM maven:3.9-amazoncorretto-17 AS build
+
+# Set working directory
 WORKDIR /usr/app
 
-# Delete the following line if use multi-stage build
-COPY target/*.jar app.jar 
+# Copy the parent pom.xml first
+COPY pom.xml .
 
-# Uncomment the following line if use multi-stage build
-# COPY --from=builder /usr/app/target/*.jar app.jar
+# Copy all module directories
+COPY ./src .
 
-EXPOSE 8083
-# Define the entry point for the application
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Build the application
+RUN mvn clean package -DskipTests
+
+# Runtime stage
+FROM openjdk:17-jdk-slim
+
+WORKDIR /usr/app
+
+# Copy the built artifact from build stage
+COPY --from=build /usr/target/*.jar /usr/app/app.jar
+
+EXPOSE 8080
+
+CMD ["java", "-jar", "app.jar"] 

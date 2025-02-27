@@ -1,4 +1,4 @@
-package com.fdm.pmsuibackend.dto;
+package com.fdm.pmsuibackend.dto.responses;
 
 import lombok.Data;
 

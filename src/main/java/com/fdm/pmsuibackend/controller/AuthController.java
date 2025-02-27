@@ -3,9 +3,9 @@ package com.fdm.pmsuibackend.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fdm.pmsuibackend.dto.UserCreationRequestDto;
-import com.fdm.pmsuibackend.dto.UserDto;
-import com.fdm.pmsuibackend.dto.UserLoginDto;
+import com.fdm.pmsuibackend.dto.requests.UserCreationRequestDto;
+import com.fdm.pmsuibackend.dto.requests.UserLoginDto;
+import com.fdm.pmsuibackend.dto.responses.UserDto;
 import com.fdm.pmsuibackend.service.AuthService;
 
 import jakarta.validation.Valid;
