@@ -1,12 +1,13 @@
 package com.fdm.pmsuibackend.service;
 
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.fdm.pmsuibackend.dto.UserCreationRequestDto;
-import com.fdm.pmsuibackend.dto.UserDto;
+import com.fdm.pmsuibackend.dto.UserRegistrationResponse;
 import com.fdm.pmsuibackend.dto.mapper.UserMapper;
 import com.fdm.pmsuibackend.model.User;
 import com.fdm.pmsuibackend.repositories.UserRepository;
@@ -25,7 +26,7 @@ public class UserService {
     private JWTService jwtService;
 
     @Transactional
-    public UserDto createUser(UserCreationRequestDto userCreationRequestDto) {
+    public UserRegistrationResponse createUser(UserCreationRequestDto userCreationRequestDto) {
         if (userRepository.existsByUsername(userCreationRequestDto.getUsername())) {
             throw new ResponseStatusException(
                 HttpStatus.CONFLICT,

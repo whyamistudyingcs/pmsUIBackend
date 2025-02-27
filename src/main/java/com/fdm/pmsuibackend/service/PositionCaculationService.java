@@ -47,8 +47,8 @@ public class PositionCaculationService {
             // Log the response
             if (response.getStatusCode().is2xxSuccessful()) {
                 //check with Tony on what data structure he is expecting. and also the topic name
-
-                simpMessagingTemplate.convertAndSend("/positionData", response.getBody());
+                System.out.println("Received position data: " + response.getBody().getPositionData());
+                simpMessagingTemplate.convertAndSend("/topic/positionData", response.getBody());
                 // Send to UI then they sub and respond
             } else {
                 System.out.println("Failed to get position: " + response.getStatusCode());
