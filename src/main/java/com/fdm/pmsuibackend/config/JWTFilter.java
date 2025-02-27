@@ -2,6 +2,7 @@ package com.fdm.pmsuibackend.config;
 
 import java.io.IOException;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -20,15 +21,17 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.RequiredArgsConstructor;
 
 @Component
-@RequiredArgsConstructor
 public class JWTFilter extends OncePerRequestFilter {
 
-    private JWTService jwtService;
+    private final JWTService jwtService;
+    private final CustomizedUserDetailsService customizedUserDetailsService;
 
-    private CustomizedUserDetailsService customizedUserDetailsService;
+    public JWTFilter(JWTService jwtService, CustomizedUserDetailsService customizedUserDetailsService) {
+        this.jwtService = jwtService;
+        this.customizedUserDetailsService = customizedUserDetailsService;
+    }
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)

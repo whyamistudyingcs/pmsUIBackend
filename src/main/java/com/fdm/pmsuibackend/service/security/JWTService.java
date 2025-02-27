@@ -24,6 +24,7 @@ public class JWTService {
     public JWTService(
             @Value("${JWT_SECRET}") String jwtSecret,
             @Value("${JWT_EXPIRATION}") long jwtExpiration) {
+        System.out.println("JWTService: JWT_SECRET=" + jwtSecret + ", JWT_EXPIRATION=" + jwtExpiration);
         this.jwtExpiration = jwtExpiration;
         this.sk = Keys.hmacShaKeyFor(jwtSecret.getBytes());
     }
