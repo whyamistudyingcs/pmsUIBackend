@@ -34,7 +34,6 @@ public class AccountService {
     public AccountDto createAccount(AccountCreationDto accountCreationDto) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User curUser = ((UserPrincipal) auth.getPrincipal()).getUser();
-
         Account account = Account.builder()
             .accountName(accountCreationDto.getAccountName())
             .departmentName(accountCreationDto.getDepartmentName())

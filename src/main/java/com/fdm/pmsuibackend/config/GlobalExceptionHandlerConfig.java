@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.sql.SQLIntegrityConstraintViolationException;
+import jakarta.validation.ConstraintViolationException;
+
 @RestControllerAdvice
 public class GlobalExceptionHandlerConfig {
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -33,5 +36,18 @@ public class GlobalExceptionHandlerConfig {
         Map<String, String> errors = new HashMap<>();
         errors.put("message", exception.getReason());
         return ResponseEntity.status(exception.getStatusCode()).body(errors);
+    }
+
+    @ExceptionHandler(ConstraintViolationException.class)
+    public ResponseEntity<Map<String, String>> handleConstraintViolationExceptions(
+        ConstraintViolationException exception
+    ) {
+        Map<String, String> errors = new HashMap<>();
+        exception.getConstraintViolations().forEach((error) -> {
+            String fieldName = error.getPropertyPath().toString();
+            String errorMessage = error.getMessage();
+            errors.put(fieldName, errorMessage);
+        });
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
     }
 }

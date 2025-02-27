@@ -1,8 +1,9 @@
 package com.fdm.pmsuibackend.dto.requests;
 
-import java.util.UUID;
+import com.fdm.pmsuibackend.dto.validator.NonZero;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.Data;
 
@@ -17,10 +18,11 @@ public class TradeRequestDto {
     @NotBlank(message = "Trade symbol is mandatory")
     private String symbol;
 
-    @NotBlank(message = "Trade quantity is mandatory")
+    @NotNull(message = "Trade quantity is mandatory")
+    @NonZero(message = "Trade quantity cannot be zero")
     private Integer quantity;
 
-    @NotBlank(message = "Trade price is mandatory")
+    @NotNull(message = "Trade price is mandatory")
     @Positive(message = "Trade price must be positive")
     private Double price;
 

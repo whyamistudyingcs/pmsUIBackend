@@ -1,8 +1,10 @@
 package com.fdm.pmsuibackend.config;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -10,10 +12,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fdm.pmsuibackend.service.security.CustomizedUserDetailsService;
 import com.fdm.pmsuibackend.service.security.JWTService;
 
 import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.UnsupportedJwtException;
+import io.jsonwebtoken.security.SignatureException;
 
 import org.springframework.stereotype.Component;
 
@@ -70,11 +76,18 @@ public class JWTFilter extends OncePerRequestFilter {
                     SecurityContextHolder.getContext().setAuthentication(authToken);
                 }
             }
-        } catch (ExpiredJwtException e) {
+        } catch (SignatureException | ExpiredJwtException | MalformedJwtException | UnsupportedJwtException | IllegalArgumentException e) {
             SecurityContextHolder.clearContext();
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            response.getWriter().write("Token expired");
-            return;
+            response.setContentType("application/json;charset=UTF-8");
+            response.setStatus(HttpStatus.UNAUTHORIZED.value());
+            
+            Map<String, String> error = new HashMap<>();
+            error.put("message", "Invalid token: " + e.getMessage());
+            
+            ObjectMapper mapper = new ObjectMapper();
+            String jsonResponse = mapper.writeValueAsString(error);
+            
+            response.getWriter().write(jsonResponse);
         }
         filterChain.doFilter(request, response);
     }
