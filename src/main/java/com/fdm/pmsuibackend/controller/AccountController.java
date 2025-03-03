@@ -3,8 +3,8 @@ package com.fdm.pmsuibackend.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fdm.pmscommon.dto.requests.AccountCreationDto;
-import com.fdm.pmscommon.dto.responses.AccountDto;
+import com.fdm.pmscommon.dto.incoming.AccountCreationDto;
+import com.fdm.pmscommon.dto.outgoing.AccountDto;
 import com.fdm.pmsuibackend.service.AccountService;
 
 import jakarta.validation.Valid;

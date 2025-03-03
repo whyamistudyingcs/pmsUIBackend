@@ -3,8 +3,8 @@ package com.fdm.pmsuibackend.mapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import com.fdm.pmscommon.dto.requests.UserCreationRequestDto;
-import com.fdm.pmscommon.dto.responses.UserDto;
+import com.fdm.pmscommon.dto.incoming.UserCreationRequestDto;
+import com.fdm.pmscommon.dto.outgoing.UserDto;
 import com.fdm.pmscommon.entities.User;
 
 import lombok.RequiredArgsConstructor;

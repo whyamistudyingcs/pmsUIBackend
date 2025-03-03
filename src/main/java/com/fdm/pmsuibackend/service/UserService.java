@@ -4,8 +4,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.fdm.pmscommon.dto.requests.UserCreationRequestDto;
-import com.fdm.pmscommon.dto.responses.UserDto;
+import com.fdm.pmscommon.dto.incoming.UserCreationRequestDto;
+import com.fdm.pmscommon.dto.outgoing.UserDto;
 import com.fdm.pmscommon.entities.User;
 import com.fdm.pmscommon.repositories.UserRepository;
 import com.fdm.pmsuibackend.mapper.UserMapper;

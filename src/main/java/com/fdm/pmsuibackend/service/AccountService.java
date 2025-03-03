@@ -10,8 +10,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.fdm.pmscommon.dto.requests.AccountCreationDto;
-import com.fdm.pmscommon.dto.responses.AccountDto;
+import com.fdm.pmscommon.dto.incoming.AccountCreationDto;
+import com.fdm.pmscommon.dto.outgoing.AccountDto;
 import com.fdm.pmscommon.entities.Account;
 import com.fdm.pmscommon.entities.User;
 import com.fdm.pmscommon.repositories.AccountRepository;
