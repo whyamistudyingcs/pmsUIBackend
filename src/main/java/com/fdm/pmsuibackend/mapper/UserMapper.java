@@ -1,12 +1,11 @@
-package com.fdm.pmsuibackend.dto.mapper;
+package com.fdm.pmsuibackend.mapper;
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import com.fdm.pmsuibackend.dto.requests.UserCreationRequestDto;
-import com.fdm.pmsuibackend.dto.responses.UserDto;
-import com.fdm.pmsuibackend.model.User;
+import com.fdm.pmscommon.dto.requests.UserCreationRequestDto;
+import com.fdm.pmscommon.dto.responses.UserDto;
+import com.fdm.pmscommon.entities.User;
 
 import lombok.RequiredArgsConstructor;
 

@@ -4,11 +4,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.fdm.pmsuibackend.dto.mapper.UserMapper;
-import com.fdm.pmsuibackend.dto.requests.UserCreationRequestDto;
-import com.fdm.pmsuibackend.dto.responses.UserDto;
-import com.fdm.pmsuibackend.model.User;
-import com.fdm.pmsuibackend.repositories.UserRepository;
+import com.fdm.pmscommon.dto.requests.UserCreationRequestDto;
+import com.fdm.pmscommon.dto.responses.UserDto;
+import com.fdm.pmscommon.entities.User;
+import com.fdm.pmscommon.repositories.UserRepository;
+import com.fdm.pmsuibackend.mapper.UserMapper;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

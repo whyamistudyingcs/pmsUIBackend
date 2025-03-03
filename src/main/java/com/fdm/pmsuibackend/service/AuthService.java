@@ -5,9 +5,9 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
-import com.fdm.pmsuibackend.dto.requests.UserCreationRequestDto;
-import com.fdm.pmsuibackend.dto.requests.UserLoginDto;
-import com.fdm.pmsuibackend.dto.responses.UserDto;
+import com.fdm.pmscommon.dto.requests.UserCreationRequestDto;
+import com.fdm.pmscommon.dto.requests.UserLoginDto;
+import com.fdm.pmscommon.dto.responses.UserDto;
 import com.fdm.pmsuibackend.service.security.JWTService;
 
 import lombok.RequiredArgsConstructor;

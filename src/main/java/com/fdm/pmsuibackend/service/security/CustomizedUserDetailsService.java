@@ -9,8 +9,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.fdm.pmsuibackend.model.User;
-import com.fdm.pmsuibackend.repositories.UserRepository;
+import com.fdm.pmscommon.entities.User;
+import com.fdm.pmscommon.repositories.UserRepository;
 import com.fdm.pmsuibackend.details.UserPrincipal;
 
 

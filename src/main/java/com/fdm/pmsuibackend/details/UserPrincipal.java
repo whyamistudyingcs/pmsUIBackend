@@ -7,7 +7,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.fdm.pmsuibackend.model.User;
+import com.fdm.pmscommon.entities.User;
 
 public class UserPrincipal implements UserDetails {
     private User user;

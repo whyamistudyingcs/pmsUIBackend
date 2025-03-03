@@ -1,9 +1,9 @@
-package com.fdm.pmsuibackend.dto.mapper;
+package com.fdm.pmsuibackend.mapper;
 
 import org.springframework.stereotype.Component;
 
-import com.fdm.pmsuibackend.dto.responses.AccountDto;
-import com.fdm.pmsuibackend.model.Account;
+import com.fdm.pmscommon.dto.responses.AccountDto;
+import com.fdm.pmscommon.entities.Account;
 
 import lombok.Data;
 
