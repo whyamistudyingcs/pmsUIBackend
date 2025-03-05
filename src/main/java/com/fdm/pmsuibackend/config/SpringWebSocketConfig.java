@@ -26,7 +26,8 @@ public class SpringWebSocketConfig implements WebSocketMessageBrokerConfigurer{
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         // Register the "/ws" endpoint for WebSocket connections
-        registry.addEndpoint("/positions");
+        registry.addEndpoint("/positions")
+                .setAllowedOriginPatterns("*");
     }
 }
 

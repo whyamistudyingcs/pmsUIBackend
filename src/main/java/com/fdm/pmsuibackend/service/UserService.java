@@ -1,11 +1,12 @@
 package com.fdm.pmsuibackend.service;
 
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.fdm.pmscommon.dto.incoming.UserCreationRequestDto;
-import com.fdm.pmscommon.dto.outgoing.UserDto;
+import com.fdm.pmscommon.dto.outgoing.UserRegistrationResponse;
 import com.fdm.pmscommon.entities.User;
 import com.fdm.pmscommon.repositories.UserRepository;
 import com.fdm.pmsuibackend.mapper.UserMapper;
@@ -21,7 +22,7 @@ public class UserService {
     private final UserMapper userMapper;
 
     @Transactional
-    public UserDto createUser(UserCreationRequestDto userCreationRequestDto) {
+    public UserRegistrationResponse createUser(UserCreationRequestDto userCreationRequestDto) {
         if (userRepository.existsByUsername(userCreationRequestDto.getUsername())) {
             throw new ResponseStatusException(
                 HttpStatus.CONFLICT,

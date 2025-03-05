@@ -4,7 +4,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.fdm.pmscommon.dto.incoming.UserCreationRequestDto;
-import com.fdm.pmscommon.dto.outgoing.UserDto;
+import com.fdm.pmscommon.dto.outgoing.UserRegistrationResponse;
 import com.fdm.pmscommon.entities.User;
 
 import lombok.RequiredArgsConstructor;
@@ -21,10 +21,11 @@ public class UserMapper {
         return user;
     }
 
-    public UserDto toUserDto(User user) {
-        UserDto userDto = new UserDto();
-        userDto.setUserId(user.getId());
-        userDto.setUsername(user.getUsername());
-        return userDto;
+    public UserRegistrationResponse toUserDto(User user) {
+        UserRegistrationResponse userRegistrationResponse = new UserRegistrationResponse();
+        userRegistrationResponse.setUserId(user.getId());
+        userRegistrationResponse.setUsername(user.getUsername());
+        userRegistrationResponse.setStatus("Success");
+        return userRegistrationResponse;
     }
 }
