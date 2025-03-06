@@ -10,7 +10,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.fdm.pmscommon.dto.TradeDto;
+import com.fdm.pmscommon.dto.general.TradeDto;
 import com.fdm.pmscommon.dto.incoming.TradeHistoryRequestDto;
 import com.fdm.pmscommon.dto.outgoing.TradeHistoryResponseDto;
 import com.fdm.pmscommon.entities.Account;

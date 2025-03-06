@@ -3,7 +3,7 @@ package com.fdm.pmsuibackend.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fdm.pmscommon.dto.TradeDto;
+import com.fdm.pmscommon.dto.general.TradeDto;
 import com.fdm.pmscommon.dto.incoming.TradeHistoryRequestDto;
 import com.fdm.pmscommon.dto.outgoing.TradeHistoryResponseDto;
 import com.fdm.pmsuibackend.service.TradeQueryService;

@@ -2,7 +2,7 @@ package com.fdm.pmsuibackend.mapper;
 
 import org.springframework.stereotype.Component;
 
-import com.fdm.pmscommon.dto.TradeDto;
+import com.fdm.pmscommon.dto.general.TradeDto;
 import com.fdm.pmscommon.entities.Trade;
 
 import lombok.Data;
